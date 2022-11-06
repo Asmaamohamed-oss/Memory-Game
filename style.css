@@ -1,0 +1,221 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+:root{
+    --button-color:#f44336;
+    --overlay-screen:rgba(29, 40, 192, 0.7);
+}
+button{
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+
+/*Splash Screen*/
+.splash{
+    position: fixed;
+    inset: 0;
+    background-color: var(--overlay-screen);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.splash button{
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 24px;
+    background-color: var(--button-color);
+    color: #fff;
+    /* text-transform: uppercase; */
+}   
+
+
+
+.container{
+    margin: auto;
+    padding: 0 20px;
+    min-height: 1080px;
+    /* background-color: #c75555; */
+}
+.info-box{
+    max-width: 840px;
+    background-color:#f6f6f6;
+    border: 2px solid rgb(51, 10, 148);
+    margin: 20px auto 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+.restart-game{
+    display: none;
+    background-color: var(--button-color);
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 17px;
+    color: #fff;
+}
+.restart-game.show-restart{
+    display: block;
+}
+
+.cards{
+    display: grid;
+    max-width: 900px;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 15px;
+    margin:0 auto 20px;
+    padding: 0 10px;
+}
+.cards.no-clicking{
+    pointer-events: none;
+}
+
+
+.card{
+    height:160px;
+    box-shadow: 0 0 2px #444;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .6s linear;
+    /* pointer-events: ; */
+}
+.card > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.card.is-flipped , 
+.card.has-match
+{
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+.card.has-match{
+    border: 2px solid #1f0950;
+}
+
+.card .front{
+    background-color: #1f0950;
+    font-size: 85px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 160px;
+}
+
+.card .back{
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.css .back,.github .back , .bootstrap .back{
+    background-color: #fff;
+}
+
+.vue .back{
+    background-color: teal;
+}
+.node .back{
+    background-color: seagreen;
+}
+.python .back{
+    background-color: rgb(43 123 160 / 88%);
+}
+.git .back,.react .back{
+    background-color: rgb(219, 219, 219);
+}
+.gulp .back{
+    background-color:#c94949;
+}
+.js .back{
+    background-color:#ffd700; ;
+}
+
+.card .back img{
+    width: 120px;
+}
+
+/*Win Popup screen*/
+/* .win-screen{
+    background-color: var(--overlay-screen);
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+} */
+.win-screen.hide-screen{
+    display: none;
+}
+.win-screen.show-screen{
+    display: flex;
+}
+.box-msg{
+    min-width: 350px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    padding: 15px;
+    position: relative;
+}
+.box-msg button.close-msg{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%,-50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-color);
+    color: #fff;
+    font-size: 19px;
+}
+.box-msg p{
+    margin-bottom:10px;
+    background-color: #ebebeb;
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.box-msg .restart-game{
+    background-color: var(--button-color);
+    color: #fff;
+    display: block;
+    margin:25px auto 0;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/*Fail Screen*/
+.fail-screen.hide-screen{
+    display: none;
+}
+.fail-screen.show-screen{
+    display: flex;
+}
+.fail-screen h3{
+    color: #444;
+    text-align: center;
+    /* background-color: #ebebeb; */
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Game</title>
+</head>
+<body>
+    <div class="splash">
+        <button>Start Game</button>
+    </div>
+    <div class="container">
+        <div class="info-box">
+            <p>
+                Hello:
+                <span class="name"></span>
+            </p>
+            <p>
+                Wrong tries:
+                <span class="tries">0</span>
+            </p>
+            <p>
+                Your Time:
+                <span class="timer">
+                    02:00
+                </span>
+            </p>
+            <button class="restart-game">Restart</button>
+        </div>
+        <div class="cards">
+            <div class="card css" data-tech="css">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/css.png" alt="css">
+                </div>
+            </div>
+            <div class="card css" data-tech="css">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/css.png" alt="css">
+                </div>
+            </div>
+            <div class="card bootstrap" data-tech="bootstrap">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/bootstrap.jpg" alt="bootstrap">
+                </div>
+            </div>
+            <div class="card bootstrap" data-tech="bootstrap">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/bootstrap.jpg" alt="bootstrap">
+                </div>
+            </div>
+            <div class="card git" data-tech="git">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/git.png" alt="git">
+                </div>
+            </div>
+            <div class="card git" data-tech="git">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/git.png" alt="git">
+                </div>
+            </div>
+            <div class="card github" data-tech="github">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/github.png" alt="github">
+                </div>
+            </div>
+            <div class="card github" data-tech="github">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/github.png" alt="github">
+                </div>
+            </div>
+            <div class="card gulp" data-tech="gulp">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/gulp-logo.png" alt="gulp">
+                </div>
+            </div>
+            <div class="card gulp" data-tech="gulp">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/gulp-logo.png" alt="gulp">
+                </div>
+            </div>
+            <div class="card js" data-tech="js">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/javascript-logo-png-1.png" alt="js">
+                </div>
+            </div>
+            <div class="card js" data-tech="js">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/javascript-logo-png-1.png" alt="js">
+                </div>
+            </div>
+            <div class="card node" data-tech="node">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/node.png" alt="node">
+                </div>
+            </div>
+            <div class="card node" data-tech="node">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/node.png" alt="node">
+                </div>
+            </div>
+            <div class="card python" data-tech="python">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/python-logo.png" alt="python">
+                </div>
+            </div>
+            <div class="card python" data-tech="python">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/python-logo.png" alt="python">
+                </div>
+            </div>
+            <div class="card react" data-tech="react">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/react.png" alt="react">
+                </div>
+            </div>
+            <div class="card react" data-tech="react">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/react.png" alt="react">
+                </div>
+            </div>
+            <div class="card vue" data-tech="vue">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/Vue-logo-1.png" alt="vue">
+                </div>
+            </div>
+            <div class="card vue" data-tech="vue">
+                <div class="front">?</div>
+                <div class="back">
+                    <img src="imgs/Vue-logo-1.png" alt="vue">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Win Screen -->
+    <div class="splash win-screen hide-screen">
+        <div class="box-msg">
+            <button class="close-msg">X</button>
+            <p class="winner">
+                Winner:
+                <span></span>
+            </p>
+            <p class="tries">
+                Wrong-Tries:
+                <span></span>
+            </p>
+            <p class="timer">
+                Game Finished in :
+                <span></span>
+            </p>
+        </div>
+    </div>
+    <!-- Fail Screen -->
+    <div class="splash fail-screen hide-screen">
+        <div class="box-msg">
+            <button class="close-msg">X</button>
+            <h3>
+                Your Time Is Up
+            </h3>
+            <button class="restart-game">Retry</button>
+        </div>
+    </div>
+    <audio id="win" src="audio/mixkit-achievement-bell-600 (1).wav" preload="auto"></audio>
+    <audio id="lose" src="audio/mixkit-losing-bleeps-2026.wav" preload="auto"></audio>
+    <script src="game.js"></script>
+</body>
+</html>
