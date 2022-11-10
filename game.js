@@ -1,12 +1,12 @@
 
 // Spalsh Screen
+const cards = document.querySelectorAll(".cards .card");
 const spalsh = document.querySelector(".splash");
 const start_btn = document.querySelector(".splash button");
 const infoBox = document.querySelector(".info-box span.name")
 let userName;
 let handel;
 let timer = document.querySelector(".info-box .timer");
-
 start_btn.addEventListener("click",(e)=>{
     userName = prompt("What is Your Name?");
     if(!userName){
@@ -17,8 +17,19 @@ start_btn.addEventListener("click",(e)=>{
 
     // Timer 
     // Start timer after start game
-    handel = setInterval(timerFunction,1000)
+    handel = setInterval(timerFunction,1000);
+    
+    /// Show all Cards At First 
+    showAllCards()
 })
+
+function showAllCards(){
+    cards.forEach(card => card.classList.add("is-flipped"))
+    setTimeout((e)=>{
+        cards.forEach(card => card.classList.remove("is-flipped"))
+    },1500)
+}
+
 
 /// Timer logic
 let seconds = 60;
@@ -55,7 +66,7 @@ function timerFunction(){
 
 /// Shuffling
 const container = document.querySelector(".cards");
-const cards = document.querySelectorAll(".cards .card");
+
 const arrayCards = [...cards];
 
 //Create Range of keys
@@ -223,6 +234,8 @@ closefailScreenBtn.addEventListener("click",(e)=>{
 
 restartBtn.forEach(function(btn){
     btn.addEventListener("click",(e)=>{
+         /// Show all Cards At First 
+        showAllCards()
         //Remove Restart Btn From Header
         restartBtn.forEach((btn)=>{
             if(btn.classList.contains("show-restart")){
